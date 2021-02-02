@@ -21,7 +21,7 @@ const ItemDetails = ({ route, navigation }) => {
 					</View>
 
 					<View style={{ flex: 1, alignItems: 'flex-end' }}>
-						<TouchableOpacity onPress={() => console.log('Search on clicked')}>
+						<TouchableOpacity>
 							<Ionicons name="search" size={30} color={COLORS.white} />
 						</TouchableOpacity>
 					</View>
@@ -31,11 +31,15 @@ const ItemDetails = ({ route, navigation }) => {
 	}
 
 	function renderInfo() {
-		let { itemInfo } = route.params;
+		let { itemDetails } = route.params;
 
-		if (itemInfo) {
+		if (itemDetails) {
 			return (
-				<ImageBackground source={itemInfo.image} resizeMode="cover" style={{ width: '100%', height: '100%' }}>
+				<ImageBackground
+					source={itemDetails.image}
+					resizeMode="cover"
+					style={{ width: '100%', height: '100%' }}
+				>
 					{renderHeader()}
 					<View
 						style={{
@@ -51,11 +55,13 @@ const ItemDetails = ({ route, navigation }) => {
 						}}
 					>
 						<View style={{ flex: 2 }}>
-							<Text style={{ color: COLORS.black, ...FONTS.h2 }}>{itemInfo.productName}</Text>
+							<Text style={{ color: COLORS.black, ...FONTS.h2 }}>{itemDetails.productName}</Text>
 						</View>
 
 						<View style={{ flex: 1.5, alignItems: 'flex-end', justifyContent: 'flex-end' }}>
-							<Text style={{ color: COLORS.darkGreen, ...FONTS.h2 }}>{itemInfo.price.toFixed(2)} $</Text>
+							<Text style={{ color: COLORS.darkGreen, ...FONTS.h2 }}>
+								{itemDetails.price.toFixed(2)} $
+							</Text>
 						</View>
 					</View>
 				</ImageBackground>

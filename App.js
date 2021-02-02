@@ -40,8 +40,6 @@ const Screens = ({ navigation }) => {
 };
 
 export const DrawerContent = (props) => {
-
-	
 	const openStore = () => {
 		//This is the main trick
 		if (Platform.OS != 'ios') {

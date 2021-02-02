@@ -5,7 +5,7 @@ const furnitureList = [
 		id: 0,
 		name: 'Chair Designs ',
 		title: 'chair designs',
-		productList: [
+		Products: [
 			{
 				productId: 1,
 				productName: 'Black Chair',
@@ -36,7 +36,7 @@ const furnitureList = [
 		id: 1,
 		name: 'Shelves Ideas',
 		title: 'shelves Ideas',
-		productList: [
+		Products: [
 			{
 				productId: 4,
 				productName: 'Cupboard',
@@ -67,7 +67,7 @@ const furnitureList = [
 		id: 2,
 		name: 'Table Designs',
 		title: 'table Designs',
-		productList: [
+		Products: [
 			{
 				productId: 7,
 				productName: 'Dining Table',
@@ -98,7 +98,7 @@ const furnitureList = [
 		id: 3,
 		name: 'Bed Designs',
 		title: 'bed Designs',
-		productList: [
+		Products: [
 			{
 				productId: 10,
 				productName: 'Iron Bedroom',
@@ -131,7 +131,7 @@ const tabs = {
 	id: 0,
 	name: 'Chairs Designs',
 	title: 'chairs designs',
-	productList: [
+	Products: [
 		{
 			productId: 1,
 			productName: 'Black Chair',

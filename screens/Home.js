@@ -6,7 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { images, icons, COLORS, FONTS, SIZES } from '../constants';
 import { tabs, furnitureList } from '../constants/dummyData';
 
-const ScrollLabelTab = ({ tabList, selectedTab, onPress }) => {
+const LabelTab = ({ tabList, selectedTab, onPress }) => {
 	const renderLabel = ({ item }) => (
 		<TouchableOpacity style={{ marginHorizontal: SIZES.padding }} onPress={() => onPress(item)}>
 			<Text
@@ -35,7 +35,7 @@ const ScrollLabelTab = ({ tabList, selectedTab, onPress }) => {
 	);
 };
 
-const ScrollLabelCard = ({ navigation, productList }) => {
+const ScrollCard = ({ navigation, productList }) => {
 	const renderCard = ({ item }) => (
 		<TouchableOpacity
 			style={{
@@ -45,7 +45,7 @@ const ScrollLabelCard = ({ navigation, productList }) => {
 				marginBottom: 10,
 				backgroundColor: COLORS.white
 			}}
-			onPress={() => navigation.navigate('ItemDetails', { itemInfo: item })}
+			onPress={() => navigation.navigate('ItemDetails', { itemDetails: item })}
 		>
 			<Image
 				source={item.image}
@@ -101,7 +101,7 @@ const Home = ({ navigation }) => {
 	const [ tabList, setTabList ] = React.useState(furnitureList);
 	const [ selectedTab, setSelectedTab ] = React.useState(tabs);
 
-	// Render
+	// Rendering
 
 	function renderHeader() {
 		return (
@@ -144,11 +144,10 @@ const Home = ({ navigation }) => {
 
 			{renderTitle(selectedTab.title)}
 
-			<ScrollLabelTab tabList={tabList} selectedTab={selectedTab} onPress={(item) => setSelectedTab(item)} />
+			<LabelTab tabList={tabList} selectedTab={selectedTab} onPress={(item) => setSelectedTab(item)} />
 
-			{/* Body */}
 			<View style={{ flex: 1 }}>
-				<ScrollLabelCard navigation={navigation} productList={selectedTab.productList} />
+				<ScrollCard navigation={navigation} productList={selectedTab.Products} />
 			</View>
 		</SafeAreaView>
 	);
